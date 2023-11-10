@@ -1,30 +1,28 @@
 'use client'
 
-import {signIn, signOut, useSession} from "next-auth/react";
-import Link from "next/link";
-import Image from "next/image";
+import { useSession, signIn, signOut } from 'next-auth/react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export function SignInButton() {
-	const {data: session, status} = useSession()
-	console.log(session, status)
-	
-	if(status === 'loading') {
-		return <>
-			...
-		</>
+	const { data: session, status } = useSession();
+	console.log(session, status);
+
+	if (status === 'loading') {
+		return <>...</>;
 	}
-	
-	if(status === 'authenticated') {
+
+	if (status === 'authenticated') {
 		return (
 			<Link href={'/dashboard'}>
 				<Image src={session.user?.image ?? '/default_avatar.jpg'} width={32} height={32} alt="Your Avatar" />
 			</Link>
-		)
+		);
 	}
 
-	return <button onClick={() => signIn()}>Sign in</button>
+	return <button onClick={() => signIn()}>Sign in</button>;
 }
 
 export function SignOutButton() {
-	return <button onClick={() => signOut()}>Sign out</button>
+	return <button onClick={() => signOut()}>Sign out</button>;
 }

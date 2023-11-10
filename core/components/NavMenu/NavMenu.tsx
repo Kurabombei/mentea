@@ -1,7 +1,11 @@
+'use client'
+
 import Link from 'next/link';
 import styles from './NavMenu.module.css';
 import Image from 'next/image';
-import {SignInButton} from "@/core/components/buttons/login";
+import {SignInButton, SignOutButton} from "@/core/components/buttons/login";
+import AuthCheck from "@/core/components/AuthCheck";
+import React from "react";
 
 export default function NavMenu() {
 	return (
@@ -26,6 +30,11 @@ export default function NavMenu() {
 				</li>
 				<li>
 					<SignInButton />
+				</li>
+				<li>
+					<AuthCheck>
+						<SignOutButton />
+					</AuthCheck>
 				</li>
 			</ul>
 		</nav>
