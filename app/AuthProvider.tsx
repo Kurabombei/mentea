@@ -6,6 +6,6 @@ type Props = {
 	children: React.ReactNode
 }
 
-export default async function AuthProvider({children}: Props) {
+export default async function AuthProvider({ children}: Props) {
 	return <SessionProvider>{children}</SessionProvider>
 }
