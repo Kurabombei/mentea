@@ -45,12 +45,24 @@ model User {
   id            String    @id @default(cuid())
   name          String?
   bio           String? @db.Text
+  title         String? @db.Text
   age           Int?
   email         String?   @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
+  followedBy    Follows[] @relation("following")
+  following     Follows[] @relation("follower")
+}
+
+model Follows {
+  follower      User @relation("follower", fields: [followerId], references: [id])
+  followerId    String
+  following     User @relation("following", fields: [followingId], references: [id])
+  followingId   String
+
+  @@id([followerId, followingId])
 }
 
 model VerificationToken {

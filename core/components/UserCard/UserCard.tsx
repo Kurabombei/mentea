@@ -4,12 +4,12 @@ import styles from './UserCard.module.css';
 interface Props {
 	id: string;
 	name: string | null;
-	bio: string | null;
+	title: string | null;
 	age: number | null;
 	image: string | null;
 }
 
-export default function UserCard({id, name, bio, age, image}: Props) {
+export default function UserCard({id, name, title, age, image}: Props) {
 	return (
 		<div className={`${styles.card} ${styles['card-animated']}`}>
 			<div className={styles.picture}>
@@ -23,7 +23,7 @@ export default function UserCard({id, name, bio, age, image}: Props) {
 				<h3>
 					<Link href={`/users/${id}`}>{name}</Link>
 				</h3>
-				<p>Title: {bio}</p>
+				<p>Title: {title}</p>
 				<p>Age: {age}</p>
 			</div>
 			<ul className={styles.social}>
