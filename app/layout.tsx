@@ -1,8 +1,7 @@
 import type {Metadata} from 'next'
 import NavMenu from "@/core/components/NavMenu/NavMenu";
 import './globals.css'
-import React from "react";
-import AuthProvider from "@/app/AuthProvider";
+import AuthProvider from "./AuthProvider";
 
 export const metadata: Metadata = {
 	title: 'Mentea',
@@ -17,7 +16,7 @@ export default function RootLayout({children}: Props) {
 			<html lang="en">
 				<body>
 					<NavMenu/>
-					{children}
+					<main>{children}</main>
 				</body>
 			</html>
 		</AuthProvider>

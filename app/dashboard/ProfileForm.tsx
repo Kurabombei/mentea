@@ -2,7 +2,7 @@
 
 export function ProfileForm({ user }: any) {
 
-	const updateUser = async (e: React.FormEvent<HTMLFormElement>) => {
+	const updateUser = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
 		const formData = new FormData(e.currentTarget);
@@ -14,7 +14,7 @@ export function ProfileForm({ user }: any) {
 			image: formData.get('image'),
 		};
 
-		const res = await fetch('/api/user', {
+		const res = fetch('/api/user', {
 			method: 'PUT',
 			body: JSON.stringify(body),
 			headers: {
@@ -22,7 +22,9 @@ export function ProfileForm({ user }: any) {
 			},
 		});
 
-		await res.json();
+		res.then((response) => {
+			return response.json()
+		});
 	};
 
 	return (

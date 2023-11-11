@@ -1,6 +1,6 @@
 'use client'
 
-export default async function Error({error, reset}: { error: Error, reset: () => void}) {
+export default function Error({error, reset}: { error: Error, reset: () => void}) {
 
 	return <div>
 		<h2>Something went wrong!</h2>

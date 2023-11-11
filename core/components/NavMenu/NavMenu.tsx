@@ -5,7 +5,7 @@ import styles from './NavMenu.module.css';
 import Image from 'next/image';
 import {SignInButton, SignOutButton} from "@/core/components/buttons/login";
 import AuthCheck from "@/core/components/AuthCheck";
-import React from "react";
+
 
 export default function NavMenu() {
 	return (

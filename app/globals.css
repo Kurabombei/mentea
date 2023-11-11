@@ -1,13 +1,13 @@
 
 :root {
-    --link-color: #1d4ed8;
+    --link-color: #7fa170ff;
 }
 
 html,
 body {
     max-width: 100vw;
     overflow-x: hidden;
-    background-color: #e3e3e3;
+    background-color: #d5d5ceff;
     /* font-family: verdana, arial, sans-serif, helvetica; */
 }
 
@@ -18,7 +18,7 @@ body {
 }
 
 main {
-    background-color: white;
+    background-color: #475a61;
     padding: 1rem;
     min-height: 300px;
 }

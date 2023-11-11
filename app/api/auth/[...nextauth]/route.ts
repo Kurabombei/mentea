@@ -7,6 +7,7 @@ import {prisma} from "@/lib/prisma";
 
 export const authOptions: NextAuthOptions = {
 	adapter: PrismaAdapter(prisma),
+	session: { strategy: "jwt", },
 	providers: [
 		GithubProvider({
 			clientId: process.env.GITHUB_ID!,
@@ -16,16 +17,7 @@ export const authOptions: NextAuthOptions = {
 			clientId: process.env.GOOGLE_CLIENT_ID!,
 			clientSecret: process.env.GOOGLE_CLIENT_SECRET!
 		})
-	],
-	callbacks: {
-		async jwt({ token, account }) {
-			// Persist the OAuth access_token to the token right after signin
-			if (account) {
-				token.accessToken = account.access_token
-			}
-			return token
-		}
-	}
+	]
 }
 
 const handler = NextAuth(authOptions)
