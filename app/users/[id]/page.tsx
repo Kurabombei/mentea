@@ -1,5 +1,6 @@
 import {prisma} from "@/lib/prisma";
 import {Metadata} from "next";
+import styles from "@/core/components/UserCard/UserCard.module.css";
 
 interface Props {
 	params: {
@@ -17,17 +18,19 @@ export default async function UserProfile({params}: Props) {
 	const {name, bio, image} = user ?? {}
 
 	return (
-		<div>
+		<div className={`${styles.card} ${styles.wideCard}`}>
 			<h1>{name}</h1>
-
-			<img
-				width={300}
-				src={image ?? '/default_avatar.jpg'}
-				alt={`${name}'s profile`}
-			/>
-
-			<h3>Bio</h3>
-			<p>{bio}</p>
+			<div className={styles.picture}>
+				<img
+					width={300}
+					src={image ?? '/default_avatar.jpg'}
+					alt={`${name}'s profile`}
+				/>
+			</div>
+			<div className={styles.cardContent}>
+				<h3>Bio</h3>
+				<p>{bio}</p>
+			</div>
 		</div>
 	)
 }

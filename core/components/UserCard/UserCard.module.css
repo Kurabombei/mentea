@@ -1,23 +1,112 @@
 .card {
-    background-color: #f1f1f1;
-    padding: 0;
-    width: 150px;
-  }
-  
-  .card h3 {
-    margin-top: 0;
-    margin-bottom: 16px;
-    color: var(--link-color);
-    font-weight: bold;
-  }
+  padding: 30px 0 40px;
+  margin-bottom: 30px;
+  background-color: #f7f5ec;
+  color: #285c4f;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  max-width: 350px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  .cardImage {
-    width: 150px;
-    height: 120px;
-    object-fit: cover;
-    margin-bottom: 0.5rem;
-  }
+.wideCard {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  .cardContent {
-    padding: 0 0.5rem;
-  }
+.card .picture {
+  display: inline-block;
+  height: 130px;
+  width: 130px;
+  margin-bottom: 50px;
+  z-index: 1;
+  position: relative;
+}
+
+.card-animated .picture::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background-color: #fada8cff;
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 0.9;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+
+.card:hover .picture::before {
+  height: 100%;
+}
+
+.card .picture::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #f5c478;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.card .picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+}
+
+.card:hover .picture img {
+  box-shadow: 0 0 0 14px #f7f5ec;
+  transform: scale(0.7);
+}
+
+.card h3 {
+  display: block;
+  font-size: 15px;
+  color: #285c4f;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.card .social {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #f5c478;
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  transition: all 0.5s ease 0s;
+}
+
+.card:hover .social {
+  bottom: 0;
+}
+
+.card .social li {
+  display: inline-block;
+}
+
+.card .social li a {
+  display: block;
+  padding: 10px;
+  font-size: 17px;
+  color: black;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+
+.card .social li a:hover {
+  color: #f5c478;
+  background-color: #f7f5ec;
+}
