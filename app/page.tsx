@@ -14,21 +14,3 @@ export default async function Home() {
     </main>
   )
 }
-//
-// // pages/api/hello_worlds.js
-// import postgres from "postgres";
-//
-// let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
-//
-// const conn = postgres({
-//   host: PGHOST,
-//   database: PGDATABASE,
-//   username: PGUSER,
-//   password: PGPASSWORD,
-//   port: 5432,
-//   ssl: "require",
-// });
-//
-// function selectAll() {
-//   return conn.query("SELECT * FROM hello_world");
-// }

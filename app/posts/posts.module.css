@@ -1,0 +1,9 @@
+.main {
+
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the minmax value as needed */
+    grid-gap: 20px; /* Best practice padding between cards */
+}

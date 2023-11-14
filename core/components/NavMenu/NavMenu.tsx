@@ -23,10 +23,13 @@ export default function NavMenu() {
 					<Link href={'/blog'}>Blog</Link>
 				</li>
 				<li>
+					<Link href={'/about'}>About us</Link>
+				</li>
+				<li>
 					<Link href={'/users'}>Users</Link>
 				</li>
 				<li>
-					<Link href={'/about'}>About us</Link>
+					<Link href={'/posts'}>All posts</Link>
 				</li>
 				<li>
 					<SignInButton />
