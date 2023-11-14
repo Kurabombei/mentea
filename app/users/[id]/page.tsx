@@ -1,6 +1,7 @@
 import {prisma} from "@/lib/prisma";
 import {Metadata} from "next";
 import styles from "@/core/components/UserCard/UserCard.module.css";
+import FollowButton from "@/core/components/buttons/Follow/FollowButton";
 
 interface Props {
 	params: {
@@ -30,6 +31,8 @@ export default async function UserProfile({params}: Props) {
 			<div className={styles.cardContent}>
 				<h3>Bio</h3>
 				<p>{bio}</p>
+
+				<FollowButton targetUserId={params.id} />
 			</div>
 		</div>
 	)
